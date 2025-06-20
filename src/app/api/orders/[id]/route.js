@@ -2,7 +2,7 @@
 
 import dbConnect from '@/lib/mongodb'; // Adjust path as needed
 import Order from '@/models/Order'; // Adjust path as needed
-
+import Quote from '@/models/Quote';
 export async function GET(request, { params }) {
   const { id } = params; // This is the quote ID
 
