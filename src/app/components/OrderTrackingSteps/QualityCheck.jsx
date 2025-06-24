@@ -2,7 +2,8 @@
 import React from "react";
 
 const QualityCheck = ({ status = "Not Started", orderData }) => {
-  const steps = ["Fabric Manufacturing", "Out for Delivery", "Delivered"];
+  const steps = ["Pending", "In Progress", "Completed"];
+
 
   // Logic: Packing Started is always completed visually
   const getCurrentStep = () => {
