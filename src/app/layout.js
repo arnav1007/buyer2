@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "../app/components/navbar";
 import Sidebar from "./components/sidebar";
 import { usePathname } from "next/navigation";
+import ThankYou from "./ThankYouPage/page";
 
 
 const geistSans = Geist({
@@ -81,6 +82,7 @@ export default function RootLayout({ children }) {
                   />
                 </div>
               </div>
+             
               <main className="pt-[65px] px-4 sm:px-6 md:px-8 lg:px-10">
                 {children}
               </main>
@@ -104,6 +106,8 @@ export default function RootLayout({ children }) {
             toggleSidebar={toggleSidebar}
           />
         )}
+
+         {/* <ThankYou /> */}
         
         {!hideNavigation && (
           <Sidebar

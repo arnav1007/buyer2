@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useRef,useEffect } from "react";
-
-
+import { useRouter } from 'next/navigation';
 const RFQForm = () => {
+    const router = useRouter();
+  
   // Form state management
   const [formData, setFormData] = useState({
     shippingAddress: "",
@@ -241,63 +242,50 @@ useEffect(() => {
   // Form submission handler
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Reset status
     setSubmitStatus({ type: "", message: "" });
-    
-    // Validate form
-    if (!validateForm()) {
-      return;
-    }
-    
-    // Set loading state
+
+    if (!validateForm()) return;
+
     setIsSubmitting(true);
-    
+
     try {
-      // Create FormData object for multipart/form-data submission
       const formDataToSend = new FormData();
-      
-      // Append form fields
+
       Object.keys(formData).forEach(key => {
         formDataToSend.append(key, formData[key]);
       });
-      
-      // Append single files
+
       if (files.techpack) {
         formDataToSend.append("techpack", files.techpack.file);
       }
-      
-      // Append multiple files
+
       ["productImages", "colorSwatch", "fabric", "miscellaneous"].forEach(fileType => {
-        if (files[fileType] && files[fileType].length > 0) {
+        if (files[fileType]?.length) {
           files[fileType].forEach((fileObj, index) => {
             formDataToSend.append(`${fileType}[${index}]`, fileObj.file);
           });
         }
       });
-      
-      // Send data to backend
+
       const response = await fetch('/api/submit-quote', {
         method: 'POST',
         body: formDataToSend,
-        // No need to set Content-Type header as FormData sets it automatically
       });
-      
+
       const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.message || 'Failed to submit RFQ');
-      }
-      
-      // Success message
+
+      if (!response.ok) throw new Error(result.message || 'Failed to submit RFQ');
+
       setSubmitStatus({
         type: "success",
-        message: "RFQ submitted successfully!"
+        // message: "RFQ submitted successfully!"
       });
-      
-      // Reset form after successful submission
+
       resetForm();
-      
+
+      // ✅ Correct: router.push() after successful submission
+      router.push('/ThankYouPage');
+
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus({
@@ -308,7 +296,6 @@ useEffect(() => {
       setIsSubmitting(false);
     }
   };
-  
   // Reset form data and files
   const resetForm = () => {
     setFormData({
