@@ -44,13 +44,13 @@ export async function POST(request) {
     console.log(quoteData);
 
     // Create temp directory for file processing if it doesn't exist
-    const tempDir = join(process.cwd(), 'tmp');
-    try {
-      await mkdir(tempDir, { recursive: true });
-    } catch (err) {
-      if (err.code !== 'EEXIST') throw err;
-    }
+    const tempDir = '/tmp'; // ✅ Use Lambda-safe tmp directory
 
+try {
+  await mkdir(tempDir, { recursive: true });
+} catch (err) {
+  if (err.code !== 'EEXIST') throw err;
+}
     // Process all files from formData
     for (const [key, value] of formData.entries()) {
       // Skip if not a file or already processed as text field
