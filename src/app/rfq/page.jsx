@@ -324,7 +324,7 @@ useEffect(() => {
     return (
       <div className="flex flex-col space-y-2 h-full">
         <div className="flex justify-between items-center mb-2">
-          <p className="font-semibold text-[#000] opacity-[0.67] text-sm font-[NSmedium]">
+          <p className="font-semibold text-[#333] text-sm font-[NSmedium]">
             {label}{isRequired ? '*' : ''}
           </p>
           
@@ -396,7 +396,7 @@ useEffect(() => {
           </div>
         </div>
         
-        <p className="text-xs text-[#000] opacity-[0.67] font-[NSregular] mt-auto">
+        <p className="text-xs text-[#333] font-[NSregular] mt-auto">
           Drop files here or Browse
         </p>
       </div>
@@ -410,7 +410,7 @@ useEffect(() => {
         <div className="flex flex-col items-center justify-center border border-dashed border-gray-400 rounded-md p-6 text-center w-full h-full bg-white border-[rgba(151,151,151,0.5)]">
           <img src="/uploadLogo.svg" alt="Upload" className="mb-2 w-8 h-8" />
           <p className="font-semibold text-gray-800 mb-1 font-[NSmedium]">UPLOAD TECHPACK*</p>
-          <p className="text-[14px] text-[#000] opacity-[0.67] font-[NSregular]">
+          <p className="text-[14px] text-[#333] font-[NSregular]">
             Upload png, jpeg, svg, pdf and docs <br />
             Files must be less than 10 MB
           </p>
@@ -481,7 +481,7 @@ useEffect(() => {
             onChange={(e) => handleSingleFileChange(e, "techpack")}
           />
           
-          <p className="text-xs text-[#000] opacity-[0.67] font-[NSregular] mt-3">
+          <p className="text-xs text-[#333] font-[NSregular] mt-3">
             Upload png, jpeg, svg, pdf and docs. Files must be less than 10 MB
           </p>
         </div>
@@ -496,7 +496,7 @@ useEffect(() => {
         <div className="flex flex-col items-center justify-center h-full text-center">
           <img src="/uploadLogo.svg" alt="Upload" className="mb-2 w-8 h-8" />
           <p className="font-semibold text-gray-800 mb-1 font-[NSmedium]">UPLOAD PRODUCT IMAGES*</p>
-          <p className="text-[14px] text-[#000] opacity-[0.67] font-[NSregular]">
+          <p className="text-[14px] text-[#333] font-[NSregular]">
             Upload png, jpeg, svg, pdf and docs <br />
             Files must be less than 10 MB
           </p>
@@ -586,7 +586,7 @@ useEffect(() => {
           onChange={(e) => handleMultiFileChange(e, "productImages")}
         />
         
-        <p className="text-xs text-[#000] opacity-[0.67] font-[NSregular] mt-2">
+        <p className="text-xs text-[#333] font-[NSregular] mt-2">
           Upload png, jpeg, svg, pdf and docs. Files must be less than 10 MB
         </p>
       </div>
@@ -631,7 +631,7 @@ useEffect(() => {
         {/* Row 1 Inputs */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4 w-full">
   <div className="col-span-1 md:col-span-4">
-            <label className="block text-sm font-medium mb-1 font-[NSmedium] text-[#000] opacity-[0.67]">
+            <label className="block text-sm font-medium mb-1 font-[NSmedium] text-[#333]">
               Shipping Address*
             </label>
             <input
@@ -644,7 +644,7 @@ useEffect(() => {
             />
           </div>
           <div>
-            <label className="block text-sm font-[NSmedium] mb-1 text-[#000] opacity-[0.67]">
+            <label className="block text-sm font-[NSmedium] mb-1 text-[#333]">
               Quantity*
             </label>
             <input
@@ -659,7 +659,7 @@ useEffect(() => {
         </div>
 
         {/* Row 2 Inputs */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6 font-[NSregular] text-[#000] opacity-[0.67]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6 font-[NSregular] text-[#333]">
           {[
             { label: "Lead Time*", name: "leadTime" },
             { label: "Target Price (in $)*", name: "targetPrice" },
@@ -707,8 +707,8 @@ useEffect(() => {
                   onClick={() => swatchRef.current.click()}
                 >
                   <img src="/SwatchLogo.svg" alt="Swatch" className="mb-1 w-6 h-6" />
-                  <p className="font-semibold text-[#000] opacity-[0.67] text-sm mb-1 font-[NSmedium]">COLOR SWATCH*</p>
-                  <p className="text-xs text-[#000] opacity-[0.67] font-[NSregular]">Drop files here or Browse</p>
+                  <p className="font-semibold text-[#333] text-sm mb-1 font-[NSmedium]">COLOR SWATCH*</p>
+                  <p className="text-xs text-[#333] font-[NSregular]">Drop files here or Browse</p>
                   <input
                     type="file"
                     ref={swatchRef}
@@ -720,7 +720,7 @@ useEffect(() => {
               ) : (
                 <div className="h-full flex flex-col">
                   <div className="flex justify-between items-center mb-1">
-                    <p className="font-semibold text-[#000] opacity-[0.67] text-sm font-[NSmedium]">COLOR SWATCH*</p>
+                    <p className="font-semibold text-[#333] text-sm font-[NSmedium]">COLOR SWATCH*</p>
                     
                     {/* Add more button */}
                     <button
@@ -799,8 +799,8 @@ useEffect(() => {
                   onClick={() => fabricRef.current.click()}
                 >
                   <img src="/PDFLogo.svg" alt="PDF" className="mb-1 w-6 h-6" />
-                  <p className="font-semibold text-[#000] opacity-[0.67] text-sm mb-1 font-[NSmedium]">FABRIC*</p>
-                  <p className="text-xs text-[#000] opacity-[0.67] font-[NSregular]">Drop files here or Browse</p>
+                  <p className="font-semibold text-[#333] text-sm mb-1 font-[NSmedium]">FABRIC*</p>
+                  <p className="text-xs text-[#333] font-[NSregular]">Drop files here or Browse</p>
                   <input
                     type="file"
                     ref={fabricRef}
@@ -812,7 +812,7 @@ useEffect(() => {
               ) : (
                 <div className="h-full flex flex-col">
                   <div className="flex justify-between items-center mb-1">
-                    <p className="font-semibold text-[#000] opacity-[0.67] text-sm font-[NSmedium]">FABRIC*</p>
+                    <p className="font-semibold text-[#333] text-sm font-[NSmedium]">FABRIC*</p>
                     
                     {/* Add more button */}
                     <button
@@ -890,8 +890,8 @@ useEffect(() => {
                   onDrop={(e) => handleMultiFileDrop(e, "miscellaneous")}
                   onClick={() => miscRef.current.click()}
                 >
-                  <p className="font-semibold text-[#000] opacity-[0.67] text-sm mb-1 font-[NSmedium]">MISCELLANEOUS</p>
-                  <p className="text-xs text-[#000] opacity-[0.67] font-[NSregular]">Drop files here or Browse</p>
+                  <p className="font-semibold text-[#333] text-sm mb-1 font-[NSmedium]">MISCELLANEOUS</p>
+                  <p className="text-xs text-[#333] font-[NSregular]">Drop files here or Browse</p>
                   <input
                     type="file"
                     ref={miscRef}
@@ -903,7 +903,7 @@ useEffect(() => {
               ) : (
                 <div className="h-full flex flex-col">
                   <div className="flex justify-between items-center mb-1">
-                    <p className="font-semibold text-[#000] opacity-[0.67] text-sm font-[NSmedium]">MISCELLANEOUS</p>
+                    <p className="font-semibold text-[#333] text-sm font-[NSmedium]">MISCELLANEOUS</p>
                     
                     {/* Add more button */}
                     <button
@@ -990,7 +990,7 @@ useEffect(() => {
         <div className="flex flex-col lg:flex-row justify-between items-center">
   {/* Left Side: Sample Option + Selector */}
   <div className="flex flex-col gap-3 p-4 rounded-md border border-gray-200 pl-4 sm:pl-10 w-full lg:w-auto">
-    <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-[#000] opacity-[0.67]">
+    <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-[#333] ">
       <span className="font-medium font-[NSregular] mr-2 sm:mr-4">
         Would you like to order a sample?
       </span>
@@ -1020,7 +1020,7 @@ useEffect(() => {
 
           {/* Sample count selector - only show if requestSample is true */}
     {formData.requestSample && (
-      <div className="flex flex-wrap items-center gap-2 text-[#000] opacity-[0.67]">
+      <div className="flex flex-wrap items-center gap-2 text-[#333] ">
         <span className="font-medium font-[NSregular] mr-2 sm:mr-5">
           Select number of samples
         </span>
@@ -1052,7 +1052,7 @@ useEffect(() => {
     type="submit" 
     disabled={isSubmitting}
     className={`bg-[#194185] text-white px-6 py-2 mt-4 lg:mt-0 rounded-[20px] font-[NSregular] ${
-      isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+      isSubmitting ? ' cursor-not-allowed' : ''
     }`}
   >
     {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
